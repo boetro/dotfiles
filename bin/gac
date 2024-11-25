@@ -1,0 +1,38 @@
+#!/bin/bash
+# Function to display usage information
+usage() {
+	echo "Usage: $0 [-m commit_message] [-p]"
+	echo "  -m commit_message  Optional commit message for the git commit."
+	echo "  -p                 Push the changes to the remote repository."
+	exit 1
+}
+# Initialize variables
+commit_message=""
+push_changes=false
+# Parse command line options
+while getopts ":m:p" opt; do
+	case ${opt} in
+	m)
+		commit_message=$OPTARG
+		;;
+	p)
+		push_changes=true
+		;;
+	\?)
+		usage
+		;;
+	esac
+done
+# Run git add
+git add .
+# Run git commit with or without a message
+if [ -n "$commit_message" ]; then
+	echo $commit_message
+	git commit -m "$commit_message"
+else
+	git commit
+fi
+# Push changes if -p flag is provided
+if [ "$push_changes" = true ]; then
+	git push origin HEAD
+fi
