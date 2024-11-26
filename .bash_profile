@@ -1,5 +1,10 @@
-# Add `~/bin` to the `$PATH`
+# Add a bunch of extra stuff to path
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:/opt/homebrew/sbin"
+export PATH="$PATH:$HOME/.nvm/versions/node/v22.7.0/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:/usr/local/sbin"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -51,3 +56,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # git wasn't working with gnupg: https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
 export GPG_TTY=$(tty)
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
