@@ -102,7 +102,7 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-	editor = nvim
+	editor = zed --wait
 
 [color]
 
