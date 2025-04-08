@@ -110,7 +110,7 @@
 
 	editor = zed --wait
 
-	hooksPath = ~/.github/hooks.sh
+	hooksPath = ~/.github/hooks
 
 [color]
 
