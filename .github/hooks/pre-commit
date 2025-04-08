@@ -1,4 +1,4 @@
-if git diff --cached --diff-filter=A | grep 'DO NOT SUBMIT' >/dev/null 2>&1
+if git diff --cached | grep -E '^\+.*DO NOT SUBMIT' >/dev/null 2>&1
 then
   echo "Trying to commit code with DO NOT SUBMIT."
   echo "Remove the DO NOT SUBMIT string from added lines and try again."
@@ -11,5 +11,3 @@ else
     exit 0
   fi
 fi
-
-# DO NOT SUBMIT testing
