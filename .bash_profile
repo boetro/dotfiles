@@ -6,6 +6,7 @@ export PATH="$PATH:$HOME/.nvm/versions/node/v22.7.0/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin"
 
 
 # Load the shell dotfiles, and then some:
